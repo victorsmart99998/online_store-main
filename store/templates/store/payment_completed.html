@@ -1,0 +1,12 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="p-5 text-center" style="width: 100%; max-width: 900px;">
+    <h3 class="mb-md-4">Order Payment Successful..</h3>
+    <h5 class="mb-md-3">Your order has been received</h5>
+    <a href="{% url 'store:shop' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Go Back To Store</a>
+</div>
+
+
+{% endblock content %}

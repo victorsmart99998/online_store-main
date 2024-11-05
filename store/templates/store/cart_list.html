@@ -1,0 +1,28 @@
+
+ <tbody class="align-middle" id="cart-list">
+ {% for product_id, product in cart_data.items %}
+ <tr>
+     <td class="align-middle"><img src="{{product.image}}" alt="" style="width: 50px;">{{product.title}}</td>
+
+     <td class="align-middle">${{product.price}}</td>
+     <td class="align-middle">
+         <div class="input-group quantity mx-auto" style="width: 100px;">
+             <div class="input-group-btn">
+                 <button class="btn btn-sm btn-primary btn-minus" >
+                     <i class="fa fa-minus"></i>
+                 </button>
+             </div>
+             <input type="hidden" class="product-id-{{product_id}}" value="{{product_id}}">
+             <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{product.qty}}">
+             <div class="input-group-btn">
+                 <button class="btn btn-sm btn-primary btn-plus">
+                     <i class="fa fa-plus"></i>
+                 </button>
+             </div>
+         </div>
+     </td>
+     <td class="align-middle">$ {% widthratio product.price 1 product.qty %}</td>
+     <td class="align-middle"><button class="btn btn-sm btn-danger delete-item" data-product="{{product_id}}"><i class="fa fa-times"></i></button></td>
+ </tr>
+ {% endfor %}
+ </tbody>

@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class='form-group'>
+    <form class='form2' action="" method='POST' >
+        {% csrf_token %}
+        <div class='form-groupp'>
+            {{ form.as_p }}
+            <button type='submit' class='btn btn-primary' style="width: 100%;">Register</button>
+            <p class="mt-5">Already Registered? <a href="{% url 'userauths:sign_in' %}">Sign in</a> </p>
+        </div>
+    </form>
+
+
+</div>
+{% endblock content %}
